@@ -9,7 +9,9 @@ enum class TaskType {
 
 class factory_task {
 public:
-    static std::unique_ptr<task> get_factory_task(TaskType task_type, const std::string &name, const std::string &description,
+    static std::shared_ptr<task> get_factory_task(TaskType task_type, const std::string &name,
+                                                  const std::string &description,
+                                                  deadline_t deadline,
                                                   PRIORITY priority, STATUS status);
 };
 
