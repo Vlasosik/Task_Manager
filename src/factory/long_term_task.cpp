@@ -1,7 +1,8 @@
 #include "long_term_task.h"
 
-long_term_task::long_term_task(std::string name, std::string description, const PRIORITY priority, const STATUS status)
-    : task(std::move(name), std::move(description), priority, status) {
+long_term_task::long_term_task(std::string name, std::string description, const deadline_t deadline, const PRIORITY priority,
+                               const STATUS status)
+    : task(std::move(name), std::move(description), deadline, priority, status) {
 }
 
 void long_term_task::mark_as_done() {

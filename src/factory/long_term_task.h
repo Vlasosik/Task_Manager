@@ -4,13 +4,8 @@
 
 
 class long_term_task final : public task {
-    std::string name;
-    std::string description;
-    PRIORITY priority{};
-    STATUS status{};
-
 public:
-    long_term_task(std::string name, std::string description, PRIORITY priority, STATUS status);
+    long_term_task(std::string name, std::string description, deadline_t deadline, PRIORITY priority, STATUS status);
 
     void mark_as_done() override;
 

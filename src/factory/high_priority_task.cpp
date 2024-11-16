@@ -1,9 +1,10 @@
 #include "high_priority_task.h"
 
 
-high_priority_task::high_priority_task(std::string name, std::string description, const PRIORITY priority,
+high_priority_task::high_priority_task(std::string name, std::string description, const deadline_t deadline,
+                                       const PRIORITY priority,
                                        const STATUS status): task(std::move(name), std::move(description),
-                                                                  priority, status) {
+                                                                  deadline, priority, status) {
 }
 
 void high_priority_task::mark_as_done() {

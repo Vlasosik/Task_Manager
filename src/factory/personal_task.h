@@ -3,13 +3,8 @@
 #include "task.h"
 
 class personal_task final : public task {
-    std::string name;
-    std::string description;
-    PRIORITY priority{};
-    STATUS status{};
-
 public:
-    personal_task(std::string name, std::string description, PRIORITY priority, STATUS status);
+    personal_task(std::string name, std::string description, deadline_t deadline, PRIORITY priority, STATUS status);
 
     void mark_as_done() override;
 
