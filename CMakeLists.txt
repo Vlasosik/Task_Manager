@@ -22,6 +22,15 @@ add_executable(task_manager main.cpp
         src/category/category.h
         src/task_manager/task_manager.cpp
         src/task_manager/task_manager.h
+        src/global_exception_handler/task_manager_exception.h
+        src/global_exception_handler/category_exception.cpp
+        src/global_exception_handler/category_exception.h
+        src/global_exception_handler/task_exception.cpp
+        src/global_exception_handler/task_exception.h
+        src/export/exports_to_file.cpp
+        src/export/exports_to_file.h
+        src/deadline_reminders/reminder_deadline.cpp
+        src/deadline_reminders/reminder_deadline.h
 )
 
 target_include_directories(task_manager PRIVATE include)
