@@ -1,7 +1,15 @@
 #ifndef PCH_H
 #define PCH_H
 #include <iostream>
-#include <string>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+#include <chrono>
 #include <vector>
 #include <unordered_map>
+#include <string>
+#include <exception>
+#include <thread>
+#include <mutex>
+#include <atomic>
 #endif //PCH_H
