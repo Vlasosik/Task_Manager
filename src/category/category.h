@@ -2,25 +2,39 @@
 #define CATEGORY_H
 
 #include "pch.h"
-#include "../factory/factory_task.h"
 
 class category {
     std::string name_category;
-    std::unordered_multimap<std::string, std::unique_ptr<task> > category_with_task;
 
 public:
     category() = default;
 
     explicit category(std::string name_category);
 
+    category(const category &other) = default;
+
+    category(category &&other) noexcept = default;
+
+    category& operator=(const category& other) = default;
+
+    category &operator=(category &&other) noexcept = default;
+
+    bool operator<(const category &other) const;
+
+    bool operator>(const category &other) const;
+
+    bool operator==(const category &other) const;
+
     [[nodiscard]] std::string get_category() const;
 
     void set_category(const std::string &name_category);
-
-    void add_task_to_category(const std::string &name, std::unique_ptr<task> task);
-
-    void show_category_tasks() const;
 };
 
+template<>
+struct std::hash<category> {
+    std::size_t operator()(const category &cat) const noexcept {
+        return std::hash<std::string>{}(cat.get_category());
+    }
+};
 
 #endif //CATEGORY_H
