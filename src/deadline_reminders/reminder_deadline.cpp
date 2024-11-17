@@ -12,6 +12,7 @@ void reminder_deadline::check_deadline(const std::unordered_multimap<category,
                 now >= one_day_before_deadline && now < deadline) {
                 std::cout << "Reminder: Task in category " << category.get_category() << ", "
                         << task->get_name() << " is due soon!" << std::endl;
+                notify();
             }
         }
     }
