@@ -3,6 +3,7 @@
 #include "../factory/task.h"
 #include "../global_exception_handler/category_exception.h"
 #include "../global_exception_handler/task_exception.h"
+#include "../observer/task_notifier.h"
 
 std::unique_ptr<task_manager> task_manager::singleton_task_manager = nullptr;
 
@@ -35,6 +36,7 @@ void task_manager::update_task(const category &category, const std::shared_ptr<t
             current->set_priority(task->get_priority());
             current->set_status(task->get_status());
         }
+        task_notifier.notify();
     } else {
         throw category_exception(category.get_category());
     }
