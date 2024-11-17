@@ -1,10 +1,11 @@
 #ifndef TASK_MANAGER_H
 #define TASK_MANAGER_H
-#include <map>
 
 #include "../category/category.h"
 #include "../factory/task.h"
+#include "../observer/task_notifier.h"
 
+class task_notifier;
 enum class PRIORITY;
 enum class STATUS;
 class task;
@@ -12,6 +13,7 @@ class task;
 class task_manager {
     std::unordered_multimap<category, std::vector<std::shared_ptr<task> > > task_manager_configure;
     static std::unique_ptr<task_manager> singleton_task_manager;
+    task_notifier task_notifier;
 
     task_manager() = default;
 
