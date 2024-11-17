@@ -3,8 +3,6 @@ project(task_manager)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(include)
-
 add_executable(task_manager main.cpp
         include/pch.h
         src/factory/task_interface.h
@@ -31,6 +29,12 @@ add_executable(task_manager main.cpp
         src/export/exports_to_file.h
         src/deadline_reminders/reminder_deadline.cpp
         src/deadline_reminders/reminder_deadline.h
+        src/observer/task_events_interface.h
+        src/observer/task_notifier.cpp
+        src/observer/task_notifier.h
+        src/observer/task_observer_interface.h
+        src/observer/task_observer.cpp
+        src/observer/task_observer.h
 )
 
 target_include_directories(task_manager PRIVATE include)
