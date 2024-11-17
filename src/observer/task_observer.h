@@ -1,8 +1,6 @@
 #ifndef TASK_OBSERVER_H
 #define TASK_OBSERVER_H
 #include "task_notifier.h"
-#include <memory>
-
 
 class task_observer : public task_observer_interface{
     task_notifier &tn;
